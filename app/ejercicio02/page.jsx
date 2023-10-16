@@ -20,7 +20,7 @@ const ejercicio02 = () => {
         let bus = Palabra.toLowerCase()
 
         const isLetter = new RegExp('^(ab)*$')
-        const isleterb = new RegExp('[b]')
+        const isleterb = new RegExp('^b$')
     
         console.log(bus)
 
