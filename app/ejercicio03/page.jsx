@@ -21,6 +21,20 @@ const ejercicio03 = () => {
         const isDigit= new RegExp('[0]')
         const isDigit1= new RegExp('[1]')
         
+        while(i < numero.length){
+            if (isDigit.test(c[i])){
+                caracter=1
+            }else if(isDigit1.test(c[i])){
+                caracter=1
+            }else{
+                caracter =2
+                setresultado('se encontró un error')
+                return
+            }
+            
+            i++
+        }
+
         if(isDigit.test(c[0])){
             caracter=0
         }
@@ -35,12 +49,18 @@ const ejercicio03 = () => {
             
         }
         if (estado== 0){
-            setresultado('Numero Aceptado')
+            setresultado('Cadena Aceptada')
         } else{
-            setresultado('Numero No Aceptado')
+            setresultado('Cadena No Aceptada')
         }
 
+    }
 
+    const borrar=()=>{
+
+        setresultado('');
+        setnumero('');
+        
     };
     return (
     <div className='text-center text-3xl m-4 bg-cyan-500 p-3' style={{borderRadius:15}}>Ejercicio 03
@@ -48,7 +68,8 @@ const ejercicio03 = () => {
         <div className='justify-evenly uppercase text-xl'>
         <input type='text' className=' text-stone-950 p-2 m-1 w-280 bg-stone-400 hover:bg-fuchsia-500' placeholder='Escribe tu entrada' id='valor'  value={numero} style={{borderRadius:15}}
         onChange={(e) => setnumero(e.target.value)}/>
-        <button onClick={analizar} className='hover:text-lime-400'>Analizar</button>
+        <button onClick={analizar} className='hover:text-lime-400 m-3'>Analizar</button>
+        <button onClick={borrar} className=' hover:text-lime-400 m-3'>Borrar</button>
         {resultado && (
                 <div className='m-3 p-4 text-center bg-lime-500' style={{borderRadius:30}}>
                     <p>Resultado: {resultado}</p>

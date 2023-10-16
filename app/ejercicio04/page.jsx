@@ -59,14 +59,21 @@ const ejercicio04 = () => {
             }
         
         if (estado== 1){
-            setresultado('Palabra Aceptada')
+            setresultado('Cadena Aceptada')
             
         } else{
-            setresultado('Palabra No Aceptada')
+            setresultado('Cadena No Aceptada')
             
         }
     
 
+    };
+
+    const borrar=()=>{
+
+        setresultado('');
+        setPalabra('');
+        
     };
     return (
         <div className='text-center text-3xl m-4 bg-cyan-500 p-3' style={{borderRadius:15}}>Ejercicio 04
@@ -74,7 +81,8 @@ const ejercicio04 = () => {
             <div className='justify-evenly uppercase text-xl'>
             <input type='text' className=' text-stone-950 p-2 m-1 w-280 bg-stone-400 hover:bg-purple-300' placeholder='Escribe tu entrada' id='valor'  value={Palabra} style={{borderRadius:15}}
             onChange={(e) => setPalabra(e.target.value)}/>
-            <button onClick={analizar} className='hover:text-lime-400'>Analizar</button>
+            <button onClick={analizar} className='hover:text-lime-400 m-3'>Analizar</button>
+            <button onClick={borrar} className=' hover:text-lime-400 m-3'>Borrar</button>
             </div>
             {resultado && (
                     <div className='m-3 p-4 text-center bg-lime-500' style={{borderRadius:30}}>

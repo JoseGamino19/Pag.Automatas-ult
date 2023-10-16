@@ -48,16 +48,18 @@ const ejercicio01 = () => {
     
     const borrar=()=>{
 
-        valor.value='';
+        setresultado('');
+        setPalabra('');
         
     };
     return (
     <div className='text-center text-3xl m-4 bg-cyan-500 p-3' style={{borderRadius:15}}>Ejercicio 01
-        <h1 className='text-xl m-6 hover:text-2xl'>Automata Finitos Derminista: Determinador de Letras</h1>
+        <h1 className='text-xl m-6 hover:text-2xl'>Automata Finitos Derminista: Identificador de cadenas A-Z </h1>
         <div className='justify-evenly uppercase text-xl'>
         <input type='text' className=' text-stone-950 p-2 m-1 w-280 bg-stone-400 hover:bg-green-400' placeholder='Escribe tu entrada' id='valor'  value={Palabra} style={{borderRadius:15}}
         onChange={(e) => setPalabra(e.target.value)}/>
-        <button onClick={analizar} className='hover:text-lime-400'>Analizar</button>
+        <button onClick={analizar} className=' hover:text-lime-400 m-3'>Analizar</button>
+        <button onClick={borrar} className=' hover:text-lime-400 m-3'>Borrar</button>
             <div id='res'>
                 {resultado && (
                     <div className='m-3 p-4 text-center bg-lime-500' style={{borderRadius:30}}>
